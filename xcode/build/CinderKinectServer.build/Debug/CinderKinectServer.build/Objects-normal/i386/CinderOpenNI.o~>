@@ -1,0 +1,4 @@
+In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h:52,
+                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp:43:
+/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':
+/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'
