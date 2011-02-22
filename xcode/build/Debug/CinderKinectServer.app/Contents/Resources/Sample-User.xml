@@ -4,7 +4,7 @@
 	</Licenses>
 	<Log writeToConsole="true" writeToFile="false">
 		<!-- 0 - Verbose, 1 - Info, 2 - Warning, 3 - Error (default) -->
-		<LogLevel value="3"/>
+		<LogLevel value="0"/>
 		<Masks>
 			<Mask name="ALL" on="false"/>
 		</Masks>
@@ -19,5 +19,8 @@
 			</Configuration>
 		</Node>	
 		<Node type="User" />
+		<Node type="Gesture" />
+		<Node type="Hands" />
+		<Node type="Scene" />
 	</ProductionNodes>
 </OpenNI>

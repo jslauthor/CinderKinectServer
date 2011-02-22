@@ -2,8 +2,9 @@
 #include "cinder/gl/gl.h"
 #include "cinder/ImageIo.h"
 #include "cinder/gl/Texture.h"
-#include "CinderOpenNI.h"
+#include "OpenNIWrapper.h"
 
+using namespace cinder;
 using namespace ci;
 using namespace ci::app;
 using namespace std;
@@ -16,10 +17,53 @@ class CinderKinectServerApp : public AppBasic
 	void mouseDown( MouseEvent event );	
 	void update();
 	void draw();
+
+	void gestureRecognized( GestureEvent event );
+	void gestureProcessed( GestureEvent event );
+	void handBegan( HandEvent event );
+	void handMoved( HandEvent event );
+	void handEnded( HandEvent event );
 	
-	gl::Texture myImage; 
-	Font font;
+	OpenNIWrapper* mOpenNIWrapper;
 };
+
+/*
+ *
+ * Event Listeners (Call backs)
+ *
+ */
+
+void CinderKinectServerApp::gestureRecognized( GestureEvent event )
+{
+	app::console() <<  "Gesture Recognized: " << event.getGesture() << " " << event.getX() << " " << event.getY() << " " << event.getZ() << endl;
+	mOpenNIWrapper->startHandsTracking(Vec3f( event.getX(), event.getY(), event.getZ() ));
+}
+
+void CinderKinectServerApp::gestureProcessed( GestureEvent event )
+{
+	app::console() <<  "Gesture Recognized: " << event.getGesture() << " " << event.getX() << " " << event.getY() << " " << event.getZ() << endl;
+}
+
+void CinderKinectServerApp::handBegan( HandEvent event )
+{
+	app::console() << "handBegan" << endl;
+}
+
+void CinderKinectServerApp::handMoved( HandEvent event )
+{
+	app::console() <<  "Hand Moving: " << event.getId() << " " << event.getX() << " " << event.getY() << " " << event.getZ() << endl;
+}
+
+void CinderKinectServerApp::handEnded( HandEvent event )
+{
+	app::console() << "handEnded" << endl;
+}
+
+/*
+ *
+ * Cinder App Lifecycle Functions
+ *
+ */
 
 void CinderKinectServerApp::prepareSettings( Settings *settings )
 {
@@ -29,12 +73,16 @@ void CinderKinectServerApp::prepareSettings( Settings *settings )
 
 void CinderKinectServerApp::setup()
 {
+	mOpenNIWrapper = new OpenNIWrapper();
+	mOpenNIWrapper->start();
 
-	myImage = gl::Texture( loadImage( loadResource( "image.jpg" ) ) );
+	mOpenNIWrapper->registerGestureRecognized(this, &CinderKinectServerApp::gestureRecognized);
+	mOpenNIWrapper->registerGestureProcessed(this, &CinderKinectServerApp::gestureProcessed);
+	mOpenNIWrapper->registerHandBegan(this, &CinderKinectServerApp::handBegan);
+	mOpenNIWrapper->registerHandMoved(this, &CinderKinectServerApp::handMoved);
+	mOpenNIWrapper->registerHandEnded(this, &CinderKinectServerApp::handEnded);
 	
-	
-	font = Font(loadResource("Arial.ttf"), 15.0f);
-	CinderOpenNISkeleton::getInstance()->setup("/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/Sample-User.xml");
+	//mOpenNIWrapper->listGestures();
 }
 
 void CinderKinectServerApp::mouseDown( MouseEvent event )
@@ -43,17 +91,16 @@ void CinderKinectServerApp::mouseDown( MouseEvent event )
 
 void CinderKinectServerApp::update()
 {
-	CinderOpenNISkeleton::getInstance()->update();
-
 }
 
 void CinderKinectServerApp::draw()
 {
-	// clear out the window with black
-	//gl::clear( Color( 0, 0, 0 ) ); 
-	//gl::draw( myImage, getWindowBounds() );
-	CinderOpenNISkeleton::getInstance()->drawDebug(font);
+	gl::clear( Color( 0, 0, 0 ) ); 
 	
+	if (mOpenNIWrapper->getDepthSurface() != 0)
+	{
+		gl::draw(gl::Texture(mOpenNIWrapper->getDepthSurface()), getWindowBounds());	
+	}
 }
 
 CINDER_APP_BASIC( CinderKinectServerApp, RendererGl )

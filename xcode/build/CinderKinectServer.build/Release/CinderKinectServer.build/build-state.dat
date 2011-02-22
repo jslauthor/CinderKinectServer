@@ -1,7 +1,7 @@
 TCinderKinectServer
 v7
 r0
-t318270131.336796
+t320033868.170753
 cCheck dependencies
 cProcessInfoPlistFile /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/Info.plist Info.plist
 cCpResource build/Release/CinderKinectServer.app/Contents/Resources/CinderApp.icns ../resources/CinderApp.icns
@@ -13,6 +13,7 @@ cCpResource build/Release/CinderKinectServer.app/Contents/Resources/image.jpg ..
 cProcessPCH++ /var/folders/iQ/iQRRMmSDH-K4FQRO-2U7gE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CinderKinectServer_Prefix-dxayqwgkqgvdrxglyjqskwgyylzo/CinderKinectServer_Prefix.pch.gch CinderKinectServer_Prefix.pch normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderOpenNI.o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderKinectServerApp.o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/OpenNIWrapper.o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp normal i386 c++ com.apple.compilers.gcc.4_2
 cLd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/MacOS/CinderKinectServer normal i386
 cTouch /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app
 
@@ -86,6 +87,11 @@ c000000004BBD2CE90000000000000DCB
 t1270689001
 s3531
 
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/errno.h
+c000000004BBD2CE900000000000003EB
+t1270689001
+s1003
+
 N/Developer/SDKs/MacOSX10.6.sdk/usr/include/inttypes.h
 c000000004BBD2CE900000000000027D1
 t1270689001
@@ -106,10 +112,20 @@ c000000004BBD2CE90000000000000560
 t1270689001
 s1376
 
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
+c000000004BBD2CE90000000000002DF5
+t1270689001
+s11765
+
 N/Developer/SDKs/MacOSX10.6.sdk/usr/include/string.h
 c000000004BBD2CE90000000000001731
 t1270689001
 s5937
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/time.h
+c000000004C2399480000000000001E17
+t1277401416
+s7703
 
 N/Developer/SDKs/MacOSX10.6.sdk/usr/include/time.h
 c000000004BBD2CE9000000000000178E
@@ -219,8 +235,8 @@ t1296240756
 s31922
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp
-c000000004D48327200000000000037E9
-t1296577138
+c000000004D48335700000000000037E9
+t1296577367
 s14313
 i"CinderOpenNI.h"
 
@@ -230,20 +246,51 @@ t1289258224
 s773236
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp
-c000000004D47C69D000000000000051B
-t1296549533
-s1307
+c000000004D631CC500000000000005C2
+t1298341061
+s1474
 i"cinder/app/AppBasic.h"
 i"cinder/gl/gl.h"
 i"cinder/ImageIo.h"
 i"cinder/gl/Texture.h"
-i"CinderOpenNI.h"
+i"OpenNIWrapper.h"
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServer_Prefix.pch
 c000000004D41A4B10000000000000093
 t1296147633
 s147
 i<Cocoa/Cocoa.h>
+
+N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp
+c000000004D631BC300000000000014CC
+t1298340803
+s5324
+i"OpenNIWrapper.h"
+
+N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h
+c000000004D631B150000000000001839
+t1298340629
+s6201
+i"Cinder/app/App.h"
+i"cinder/Cinder.h"
+i"cinder/Thread.h"
+i"cinder/Vector.h"
+i"cinder/Area.h"
+i"cinder/Exception.h"
+i"cinder/ImageIo.h"
+i"cinder/Utilities.h"
+i"cinder/Surface.h"
+i"cinder/Stream.h"
+i"cinder/gl/gl.h"
+i"cinder/gl/Texture.h"
+i"cinder/Function.h"
+i"cinder/Font.h"
+i<map>
+i<XnOpenNI.h>
+i<XnCppWrapper.h>
+i<XnCodecIDs.h>
+i<XnHash.h>
+i<XnLog.h>
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/Sample-Scene.xml
 c000000004D420C900000000000000236
@@ -277,20 +324,24 @@ i"XnStatusCodes.h"
 i"XnStatus.h"
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderKinectServer.LinkFileList
-c000000004D41FF34000000000000015D
-t1296170804
-s349
+c000000004D631A330000000000000208
+t1298340403
+s520
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderKinectServerApp.o
-t1296549542
-s13600
+t1298341067
+s9964
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderOpenNI.o
-t1296577330
+t1298340406
 s25312
 
+N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/OpenNIWrapper.o
+t1298340809
+s58580
+
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app
-t1296577331
+t1298341068
 s102
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/Info.plist
@@ -298,8 +349,8 @@ t1296170804
 s862
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/MacOS/CinderKinectServer
-t1296577331
-s872688
+t1298341068
+s803980
 
 N/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/PkgInfo
 t1296170804
@@ -581,6 +632,24 @@ i<boost/config/select_stdlib_config.hpp>
 i<boost/config/select_platform_config.hpp>
 i<boost/config/suffix.hpp>
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/config/abi_prefix.hpp
+c00000000487C7EF000000000000002D3
+t1216118512
+s723
+i<boost/config.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/config/abi_suffix.hpp
+c00000000487C7EF00000000000000328
+t1216118512
+s808
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/config/auto_link.hpp
+c000000004C066AEC0000000000003923
+t1275489004
+s14627
+i<boost/config.hpp>
+i<boost/version.hpp>
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/config/no_tr1/cmath.hpp
 c0000000048D38BD90000000000000362
 t1221823449
@@ -610,6 +679,12 @@ c00000000434FBDBA0000000000000EF7
 t1129299386
 s3831
 i<unistd.h>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/config/requires_threads.hpp
+c000000003FE438870000000000000E0F
+t1071921287
+s3599
+i<boost/config.hpp>
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/config/select_compiler_config.hpp
 c000000004BE6AB61000000000000106F
@@ -656,6 +731,440 @@ N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/cu
 c000000004749B9D70000000000000615
 t1196014039
 s1557
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/adjust_functors.hpp
+c0000000047C5C15800000000000017B8
+t1204142424
+s6072
+i"boost/date_time/date.hpp"
+i"boost/date_time/wrapping_int.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/c_time.hpp
+c000000004B4A27C30000000000000FC1
+t1263151043
+s4033
+i<ctime>
+i<string>
+i<stdexcept>
+i<boost/throw_exception.hpp>
+i<boost/date_time/compiler_config.hpp>
+i<sys/time.h>
+i<time.h>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/compiler_config.hpp
+c00000000491B30910000000000001986
+t1226518673
+s6534
+i<cstdlib>
+i<boost/config.hpp>
+i<boost/detail/workaround.hpp>
+i<boost/date_time/locale_config.hpp>
+i<boost/cstdint.hpp>
+i<locale>
+i<boost/config/auto_link.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/constrained_value.hpp
+c00000000491B30910000000000001022
+t1226518673
+s4130
+i<exception>
+i<stdexcept>
+i<boost/config.hpp>
+i<boost/throw_exception.hpp>
+i<boost/mpl/if.hpp>
+i<boost/type_traits/is_base_of.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/date.hpp
+c000000004B4A27C30000000000001B7E
+t1263151043
+s7038
+i<boost/operators.hpp>
+i<boost/date_time/year_month_day.hpp>
+i<boost/date_time/special_defs.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/date_clock_device.hpp
+c0000000047C5C15800000000000008CD
+t1204142424
+s2253
+i"boost/date_time/c_time.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/date_defs.hpp
+c0000000047C5C1580000000000000306
+t1204142424
+s774
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/date_duration.hpp
+c00000000491B309100000000000011AB
+t1226518673
+s4523
+i<boost/operators.hpp>
+i<boost/date_time/special_defs.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/date_duration_types.hpp
+c0000000047C5C158000000000000213E
+t1204142424
+s8510
+i<boost/date_time/int_adapter.hpp>
+i<boost/date_time/special_defs.hpp>
+i<boost/date_time/date_duration.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/date_generators.hpp
+c00000000491B30910000000000004179
+t1226518673
+s16761
+i<stdexcept>
+i<sstream>
+i<boost/throw_exception.hpp>
+i<boost/date_time/date.hpp>
+i<boost/date_time/compiler_config.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/date_iterator.hpp
+c0000000047C5C1580000000000000D91
+t1204142424
+s3473
+i<iterator>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/dst_rules.hpp
+c0000000047C5C1580000000000003E03
+t1204142424
+s15875
+i"boost/date_time/date_generators.hpp"
+i"boost/date_time/period.hpp"
+i"boost/date_time/date_defs.hpp"
+i<stdexcept>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/filetime_functions.hpp
+c000000004A2A51D900000000000017CF
+t1244287449
+s6095
+i<boost/date_time/compiler_config.hpp>
+i<windows.h>
+i<boost/cstdint.hpp>
+i<boost/date_time/time.hpp>
+i<boost/date_time/date_defs.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/conversion.hpp
+c000000004C0FD9050000000000000886
+t1276107013
+s2182
+i<cstring>
+i<string>
+i<stdexcept>
+i<boost/throw_exception.hpp>
+i<boost/date_time/c_time.hpp>
+i<boost/date_time/special_defs.hpp>
+i<boost/date_time/gregorian/gregorian_types.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_calendar.hpp
+c000000004B4A27C3000000000000064F
+t1263151043
+s1615
+i<boost/cstdint.hpp>
+i<boost/date_time/gregorian/greg_weekday.hpp>
+i<boost/date_time/gregorian/greg_day_of_year.hpp>
+i<boost/date_time/gregorian_calendar.hpp>
+i<boost/date_time/gregorian/greg_ymd.hpp>
+i<boost/date_time/int_adapter.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_date.hpp
+c000000004B4A27C30000000000001218
+t1263151043
+s4632
+i<boost/throw_exception.hpp>
+i<boost/date_time/date.hpp>
+i<boost/date_time/special_defs.hpp>
+i<boost/date_time/gregorian/greg_calendar.hpp>
+i<boost/date_time/gregorian/greg_duration.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_day.hpp
+c0000000047C5C1580000000000000743
+t1204142424
+s1859
+i"boost/date_time/constrained_value.hpp"
+i<stdexcept>
+i<string>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_day_of_year.hpp
+c0000000047C5C1580000000000000457
+t1204142424
+s1111
+i"boost/date_time/constrained_value.hpp"
+i<stdexcept>
+i<string>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_duration.hpp
+c00000000491B30910000000000000FC0
+t1226518673
+s4032
+i<boost/date_time/date_duration.hpp>
+i<boost/date_time/int_adapter.hpp>
+i<boost/date_time/special_defs.hpp>
+i<boost/date_time/date_duration_types.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_duration_types.hpp
+c00000000491B309100000000000005D6
+t1226518673
+s1494
+i<boost/date_time/gregorian/greg_date.hpp>
+i<boost/date_time/int_adapter.hpp>
+i<boost/date_time/adjust_functors.hpp>
+i<boost/date_time/date_duration_types.hpp>
+i<boost/date_time/gregorian/greg_duration.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_month.hpp
+c0000000047C5C1580000000000000E08
+t1204142424
+s3592
+i"boost/date_time/constrained_value.hpp"
+i"boost/date_time/date_defs.hpp"
+i"boost/shared_ptr.hpp"
+i"boost/date_time/compiler_config.hpp"
+i<stdexcept>
+i<string>
+i<map>
+i<algorithm>
+i<cctype>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_weekday.hpp
+c00000000491B309100000000000007C8
+t1226518673
+s1992
+i"boost/date_time/constrained_value.hpp"
+i"boost/date_time/date_defs.hpp"
+i"boost/date_time/compiler_config.hpp"
+i<stdexcept>
+i<string>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_year.hpp
+c0000000047C5C1580000000000000691
+t1204142424
+s1681
+i"boost/date_time/constrained_value.hpp"
+i<stdexcept>
+i<string>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/greg_ymd.hpp
+c0000000047C5C15800000000000003A9
+t1204142424
+s937
+i"boost/date_time/year_month_day.hpp"
+i"boost/date_time/special_defs.hpp"
+i"boost/date_time/gregorian/greg_day.hpp"
+i"boost/date_time/gregorian/greg_year.hpp"
+i"boost/date_time/gregorian/greg_month.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian/gregorian_types.hpp
+c0000000047C5C1580000000000000ECB
+t1204142424
+s3787
+i"boost/date_time/date.hpp"
+i"boost/date_time/period.hpp"
+i"boost/date_time/gregorian/greg_calendar.hpp"
+i"boost/date_time/gregorian/greg_duration.hpp"
+i"boost/date_time/gregorian/greg_duration_types.hpp"
+i"boost/date_time/gregorian/greg_date.hpp"
+i"boost/date_time/date_generators.hpp"
+i"boost/date_time/date_clock_device.hpp"
+i"boost/date_time/date_iterator.hpp"
+i"boost/date_time/adjust_functors.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian_calendar.hpp
+c000000004B4A27C30000000000000A21
+t1263151043
+s2593
+i"boost/date_time/gregorian_calendar.ipp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/gregorian_calendar.ipp
+c000000004B4A27C30000000000001FC9
+t1263151043
+s8137
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/int_adapter.hpp
+c00000000491B309100000000000037F2
+t1226518673
+s14322
+i"boost/config.hpp"
+i"boost/limits.hpp"
+i"boost/date_time/special_defs.hpp"
+i"boost/date_time/locale_config.hpp"
+i<ostream>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/locale_config.hpp
+c0000000047C5C1580000000000000470
+t1204142424
+s1136
+i"boost/config.hpp"
+i"boost/detail/workaround.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/microsec_time_clock.hpp
+c000000004BE7CEC40000000000001474
+t1273482948
+s5236
+i<boost/cstdint.hpp>
+i<boost/shared_ptr.hpp>
+i<boost/detail/workaround.hpp>
+i<boost/date_time/compiler_config.hpp>
+i<boost/date_time/c_time.hpp>
+i<boost/date_time/time_clock.hpp>
+i<boost/date_time/filetime_functions.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/period.hpp
+c0000000047C5C1580000000000002CA1
+t1204142424
+s11425
+i"boost/operators.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/posix_time/conversion.hpp
+c000000004C0FD9050000000000000CAD
+t1276107013
+s3245
+i<cstring>
+i<boost/date_time/posix_time/ptime.hpp>
+i<boost/date_time/posix_time/posix_time_duration.hpp>
+i<boost/date_time/filetime_functions.hpp>
+i<boost/date_time/c_time.hpp>
+i<boost/date_time/time_resolution_traits.hpp>
+i<boost/date_time/gregorian/conversion.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/posix_time/date_duration_operators.hpp
+c0000000047C5C1580000000000000F83
+t1204142424
+s3971
+i"boost/date_time/gregorian/greg_duration_types.hpp"
+i"boost/date_time/posix_time/ptime.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/posix_time/posix_time_config.hpp
+c000000004A27B57C00000000000017F1
+t1244116348
+s6129
+i<cstdlib>
+i<boost/limits.hpp>
+i<boost/cstdint.hpp>
+i<boost/config/no_tr1/cmath.hpp>
+i<boost/date_time/time_duration.hpp>
+i<boost/date_time/time_resolution_traits.hpp>
+i<boost/date_time/gregorian/gregorian_types.hpp>
+i<boost/date_time/wrapping_int.hpp>
+i<boost/date_time/compiler_config.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/posix_time/posix_time_duration.hpp
+c0000000047C5C158000000000000080A
+t1204142424
+s2058
+i"boost/date_time/posix_time/posix_time_config.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/posix_time/posix_time_system.hpp
+c0000000047C5C15800000000000004F5
+t1204142424
+s1269
+i"boost/date_time/posix_time/posix_time_config.hpp"
+i"boost/date_time/time_system_split.hpp"
+i"boost/date_time/time_system_counted.hpp"
+i"boost/date_time/compiler_config.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/posix_time/posix_time_types.hpp
+c0000000047C5C158000000000000073D
+t1204142424
+s1853
+i"boost/date_time/time_clock.hpp"
+i"boost/date_time/microsec_time_clock.hpp"
+i"boost/date_time/posix_time/ptime.hpp"
+i"boost/date_time/posix_time/date_duration_operators.hpp"
+i"boost/date_time/posix_time/posix_time_duration.hpp"
+i"boost/date_time/posix_time/posix_time_system.hpp"
+i"boost/date_time/posix_time/time_period.hpp"
+i"boost/date_time/time_iterator.hpp"
+i"boost/date_time/dst_rules.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/posix_time/ptime.hpp
+c0000000047C5C1580000000000000893
+t1204142424
+s2195
+i"boost/date_time/posix_time/posix_time_system.hpp"
+i"boost/date_time/time.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/posix_time/time_period.hpp
+c0000000047C5C15800000000000002FE
+t1204142424
+s766
+i"boost/date_time/period.hpp"
+i"boost/date_time/posix_time/posix_time_duration.hpp"
+i"boost/date_time/posix_time/ptime.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/special_defs.hpp
+c0000000047C5C15800000000000002C1
+t1204142424
+s705
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/time.hpp
+c00000000491B309100000000000018CA
+t1226518673
+s6346
+i<string>
+i<boost/operators.hpp>
+i<boost/date_time/time_defs.hpp>
+i<boost/date_time/special_defs.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/time_clock.hpp
+c0000000047C5C1580000000000000947
+t1204142424
+s2375
+i"boost/date_time/c_time.hpp"
+i"boost/shared_ptr.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/time_defs.hpp
+c00000000491B30910000000000000408
+t1226518673
+s1032
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/time_duration.hpp
+c000000004A2784D10000000000002206
+t1244103889
+s8710
+i<boost/cstdint.hpp>
+i<boost/operators.hpp>
+i<boost/date_time/time_defs.hpp>
+i<boost/date_time/special_defs.hpp>
+i<boost/date_time/compiler_config.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/time_iterator.hpp
+c0000000047C5C1580000000000000617
+t1204142424
+s1559
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/time_resolution_traits.hpp
+c000000004A2A5243000000000000147B
+t1244287555
+s5243
+i<boost/cstdint.hpp>
+i<boost/date_time/time_defs.hpp>
+i<boost/date_time/int_adapter.hpp>
+i<boost/date_time/compiler_config.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/time_system_counted.hpp
+c0000000047C5C15800000000000021F2
+t1204142424
+s8690
+i"boost/date_time/time_defs.hpp"
+i<string>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/time_system_split.hpp
+c00000000491C89AF0000000000001EBE
+t1226607023
+s7870
+i<string>
+i"boost/date_time/compiler_config.hpp"
+i"boost/date_time/special_defs.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/wrapping_int.hpp
+c00000000491B30910000000000001692
+t1226518673
+s5778
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/date_time/year_month_day.hpp
+c0000000047C5C158000000000000054C
+t1204142424
+s1356
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/detail/call_traits.hpp
 c0000000048F39F9F0000000000001076
@@ -762,6 +1271,20 @@ i<boost/mpl/has_xxx.hpp>
 i<cstddef>
 i"boost/type_traits/detail/bool_trait_def.hpp"
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/detail/lcast_precision.hpp
+c000000004B782559000000000000183E
+t1266165081
+s6206
+i<climits>
+i<ios>
+i<limits>
+i<boost/config.hpp>
+i<boost/integer_traits.hpp>
+i<boost/mpl/if.hpp>
+i<boost/type_traits/is_abstract.hpp>
+i<boost/assert.hpp>
+i<boost/static_assert.hpp>
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/detail/limits.hpp
 c0000000045714FB50000000000004287
 t1165053877
@@ -787,6 +1310,17 @@ i<boost/config.hpp>
 i<boost/type_traits/arithmetic_traits.hpp>
 i<boost/type_traits/composite_traits.hpp>
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/detail/reference_content.hpp
+c000000004104510C0000000000000C5B
+t1090801932
+s3163
+i"boost/config.hpp"
+i"boost/mpl/bool.hpp"
+i"boost/type_traits/has_nothrow_copy.hpp"
+i"boost/mpl/if.hpp"
+i"boost/type_traits/is_reference.hpp"
+i"boost/mpl/void.hpp"
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/detail/sp_typeinfo.hpp
 c000000004C38DC3D00000000000008F6
 t1278794813
@@ -801,6 +1335,12 @@ c000000004BF2C6260000000000001D80
 t1274201638
 s7552
 i<boost/config.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/enable_shared_from_this.hpp
+c0000000049AC07B80000000000000224
+t1236010936
+s548
+i<boost/smart_ptr/enable_shared_from_this.hpp>
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/exception/detail/attribute_noreturn.hpp
 c000000004B295EB1000000000000021B
@@ -1144,6 +1684,12 @@ i<boost/config.hpp>
 i<boost/limits.hpp>
 i<limits.h>
 i<wchar.h>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/intrusive_ptr.hpp
+c0000000049AC07B80000000000000205
+t1236010936
+s517
+i<boost/smart_ptr/intrusive_ptr.hpp>
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/iostreams/categories.hpp
 c000000004C24589A0000000000001346
@@ -2186,6 +2732,30 @@ s1996
 i<boost/iterator.hpp>
 i<boost/utility.hpp>
 i<boost/iterator/iterator_adaptor.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/lexical_cast.hpp
+c000000004AAC1FA30000000000009AA7
+t1252794275
+s39591
+i<climits>
+i<cstddef>
+i<istream>
+i<string>
+i<typeinfo>
+i<exception>
+i<boost/config.hpp>
+i<boost/limits.hpp>
+i<boost/mpl/if.hpp>
+i<boost/throw_exception.hpp>
+i<boost/type_traits/is_pointer.hpp>
+i<boost/type_traits/make_unsigned.hpp>
+i<boost/call_traits.hpp>
+i<boost/static_assert.hpp>
+i<boost/detail/lcast_precision.hpp>
+i<boost/detail/workaround.hpp>
+i<locale>
+i<strstream>
+i<sstream>
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/limits.hpp
 c0000000049C6759A0000000000001879
@@ -3342,6 +3912,17 @@ c0000000041263212000000000000041A
 t1093022226
 s1050
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/none.hpp
+c000000004749B9D70000000000000314
+t1196014039
+s788
+i"boost/none_t.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/none_t.hpp
+c000000004749B9D70000000000000275
+t1196014039
+s629
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/operators.hpp
 c000000004A16699B0000000000009AE8
 t1242982811
@@ -3349,6 +3930,38 @@ s39656
 i<boost/config.hpp>
 i<boost/iterator.hpp>
 i<boost/detail/workaround.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/optional.hpp
+c000000004749B9D70000000000000222
+t1196014039
+s546
+i"boost/optional/optional.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/optional/optional.hpp
+c000000004C3F7B52000000000000754A
+t1279228754
+s30026
+i<new>
+i<algorithm>
+i"boost/config.hpp"
+i"boost/assert.hpp"
+i"boost/type.hpp"
+i"boost/type_traits/alignment_of.hpp"
+i"boost/type_traits/type_with_alignment.hpp"
+i"boost/type_traits/remove_reference.hpp"
+i"boost/type_traits/is_reference.hpp"
+i"boost/mpl/if.hpp"
+i"boost/mpl/bool.hpp"
+i"boost/mpl/not.hpp"
+i"boost/detail/reference_content.hpp"
+i"boost/none.hpp"
+i"boost/utility/compare_pointees.hpp"
+i"boost/optional/optional_fwd.hpp"
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/optional/optional_fwd.hpp
+c000000004C3F7B520000000000000265
+t1279228754
+s613
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/preprocessor/arithmetic/add.hpp
 c000000004145C2010000000000000775
@@ -4876,6 +5489,28 @@ i<windows.h>
 i<sched.h>
 i<time.h>
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/smart_ptr/enable_shared_from_this.hpp
+c0000000049B05AE90000000000000726
+t1236294377
+s1830
+i<boost/smart_ptr/weak_ptr.hpp>
+i<boost/smart_ptr/shared_ptr.hpp>
+i<boost/assert.hpp>
+i<boost/config.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/smart_ptr/intrusive_ptr.hpp
+c000000004B2679730000000000001A8F
+t1260812659
+s6799
+i<boost/config.hpp>
+i<boost/assert.hpp>
+i<boost/detail/workaround.hpp>
+i<boost/smart_ptr/detail/sp_convertible.hpp>
+i<boost/config/no_tr1/functional.hpp>
+i<iosfwd>
+i<ostream>
+i<boost/smart_ptr/detail/operator_bool.hpp>
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/smart_ptr/shared_ptr.hpp
 c000000004B2679730000000000004753
 t1260812659
@@ -4898,12 +5533,357 @@ i<iosfwd>
 i<ostream>
 i<boost/smart_ptr/detail/operator_bool.hpp>
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/smart_ptr/weak_ptr.hpp
+c000000004B2679730000000000001529
+t1260812659
+s5417
+i<memory>
+i<boost/smart_ptr/detail/shared_count.hpp>
+i<boost/smart_ptr/shared_ptr.hpp>
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/static_assert.hpp
 c0000000048773ABB0000000000001449
 t1215773371
 s5193
 i<boost/config.hpp>
 i<boost/detail/workaround.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/condition_variable.hpp
+c000000004749B9D7000000000000028F
+t1196014039
+s655
+i<boost/thread/detail/platform.hpp>
+i<boost/thread/win32/condition_variable.hpp>
+i<boost/thread/pthread/condition_variable.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/detail/config.hpp
+c000000004C3774C50000000000000CD1
+t1278702789
+s3281
+i<boost/config.hpp>
+i<boost/detail/workaround.hpp>
+i"platform.hpp"
+i<boost/config/auto_link.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/detail/move.hpp
+c000000004ADC2ED5000000000000054B
+t1255943893
+s1355
+i<boost/utility/enable_if.hpp>
+i<boost/type_traits/is_convertible.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/detail/platform.hpp
+c000000004C3774C50000000000000ABA
+t1278702789
+s2746
+i<boost/config.hpp>
+i<boost/config/requires_threads.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/detail/thread.hpp
+c000000004C3774C50000000000003938
+t1278702789
+s14648
+i<boost/thread/exceptions.hpp>
+i<ostream>
+i<boost/thread/detail/move.hpp>
+i<boost/thread/mutex.hpp>
+i<boost/thread/xtime.hpp>
+i<boost/thread/detail/thread_heap_alloc.hpp>
+i<boost/utility.hpp>
+i<boost/assert.hpp>
+i<list>
+i<algorithm>
+i<boost/ref.hpp>
+i<boost/cstdint.hpp>
+i<boost/bind.hpp>
+i<stdlib.h>
+i<memory>
+i<boost/utility/enable_if.hpp>
+i<boost/type_traits/remove_reference.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/detail/thread_group.hpp
+c000000004C3774C50000000000000B27
+t1278702789
+s2855
+i<list>
+i<boost/thread/shared_mutex.hpp>
+i<boost/thread/mutex.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/detail/thread_heap_alloc.hpp
+c0000000048590714000000000000028E
+t1213794068
+s654
+i<boost/thread/detail/platform.hpp>
+i<boost/thread/win32/thread_heap_alloc.hpp>
+i<boost/thread/pthread/thread_heap_alloc.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/detail/thread_interruption.hpp
+c000000004AEAB6D50000000000000473
+t1256896213
+s1139
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/exceptions.hpp
+c000000004ADC2ED50000000000000EF6
+t1255943893
+s3830
+i<boost/thread/detail/config.hpp>
+i<string>
+i<stdexcept>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/locks.hpp
+c000000004C3774C5000000000000B7CF
+t1278702789
+s47055
+i<boost/thread/detail/config.hpp>
+i<boost/thread/exceptions.hpp>
+i<boost/thread/detail/move.hpp>
+i<algorithm>
+i<iterator>
+i<boost/thread/thread_time.hpp>
+i<boost/detail/workaround.hpp>
+i<boost/type_traits/is_class.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/mutex.hpp
+c000000004749B9D7000000000000024E
+t1196014039
+s590
+i<boost/thread/detail/platform.hpp>
+i<boost/thread/win32/mutex.hpp>
+i<boost/thread/pthread/mutex.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/pthread/condition_variable.hpp
+c000000004C3774C50000000000001698
+t1278702789
+s5784
+i"timespec.hpp"
+i"pthread_mutex_scoped_lock.hpp"
+i"thread_data.hpp"
+i"condition_variable_fwd.hpp"
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/pthread/mutex.hpp
+c000000004C3774C50000000000001770
+t1278702789
+s6000
+i<pthread.h>
+i<boost/utility.hpp>
+i<boost/throw_exception.hpp>
+i<boost/thread/exceptions.hpp>
+i<boost/thread/locks.hpp>
+i<boost/thread/thread_time.hpp>
+i<boost/thread/xtime.hpp>
+i<boost/assert.hpp>
+i<errno.h>
+i"timespec.hpp"
+i"pthread_mutex_scoped_lock.hpp"
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/pthread/recursive_mutex.hpp
+c000000004C3AC89B00000000000027F0
+t1278920859
+s10224
+i<pthread.h>
+i<boost/utility.hpp>
+i<boost/throw_exception.hpp>
+i<boost/thread/exceptions.hpp>
+i<boost/thread/locks.hpp>
+i<boost/thread/thread_time.hpp>
+i<boost/assert.hpp>
+i<unistd.h>
+i<boost/date_time/posix_time/conversion.hpp>
+i<errno.h>
+i"timespec.hpp"
+i"pthread_mutex_scoped_lock.hpp"
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/pthread/shared_mutex.hpp
+c000000004C3774C500000000000022B2
+t1278702789
+s8882
+i<boost/assert.hpp>
+i<boost/static_assert.hpp>
+i<boost/thread/mutex.hpp>
+i<boost/thread/condition_variable.hpp>
+i<boost/thread/detail/thread_interruption.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/pthread/thread_data.hpp
+c000000004ADC2ED50000000000001037
+t1255943893
+s4151
+i<boost/thread/detail/config.hpp>
+i<boost/thread/exceptions.hpp>
+i<boost/shared_ptr.hpp>
+i<boost/enable_shared_from_this.hpp>
+i<boost/thread/mutex.hpp>
+i<boost/optional.hpp>
+i<pthread.h>
+i"condition_variable_fwd.hpp"
+i<map>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/pthread/thread_heap_alloc.hpp
+c000000004BB4B5EF0000000000002438
+t1270134255
+s9272
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/recursive_mutex.hpp
+c000000004749B9D70000000000000280
+t1196014039
+s640
+i<boost/thread/detail/platform.hpp>
+i<boost/thread/win32/recursive_mutex.hpp>
+i<boost/thread/pthread/recursive_mutex.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/shared_mutex.hpp
+c000000004749B9D70000000000000271
+t1196014039
+s625
+i<boost/thread/detail/platform.hpp>
+i<boost/thread/win32/shared_mutex.hpp>
+i<boost/thread/pthread/shared_mutex.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/thread.hpp
+c000000004AEAB6D500000000000002F9
+t1256896213
+s761
+i<boost/thread/detail/platform.hpp>
+i<boost/thread/win32/thread_data.hpp>
+i<boost/thread/pthread/thread_data.hpp>
+i<boost/thread/detail/thread.hpp>
+i<boost/thread/detail/thread_interruption.hpp>
+i<boost/thread/detail/thread_group.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/thread_time.hpp
+c00000000485907140000000000000543
+t1213794068
+s1347
+i<boost/date_time/microsec_time_clock.hpp>
+i<boost/date_time/posix_time/posix_time_types.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/win32/condition_variable.hpp
+c00000000485907140000000000003530
+t1213794068
+s13616
+i<boost/thread/mutex.hpp>
+i"thread_primitives.hpp"
+i<limits.h>
+i<boost/assert.hpp>
+i<algorithm>
+i<boost/thread/thread.hpp>
+i<boost/thread/thread_time.hpp>
+i"interlocked_read.hpp"
+i<boost/thread/xtime.hpp>
+i<vector>
+i<boost/intrusive_ptr.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/win32/mutex.hpp
+c000000004C3774C5000000000000066E
+t1278702789
+s1646
+i"basic_timed_mutex.hpp"
+i<boost/utility.hpp>
+i<boost/thread/exceptions.hpp>
+i<boost/thread/locks.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/win32/recursive_mutex.hpp
+c000000004C3774C500000000000007C7
+t1278702789
+s1991
+i<boost/utility.hpp>
+i"basic_recursive_mutex.hpp"
+i<boost/thread/exceptions.hpp>
+i<boost/thread/locks.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/win32/shared_mutex.hpp
+c000000004C3774C500000000000051AE
+t1278702789
+s20910
+i<boost/assert.hpp>
+i<boost/detail/interlocked.hpp>
+i<boost/thread/win32/thread_primitives.hpp>
+i<boost/static_assert.hpp>
+i<limits.h>
+i<boost/utility.hpp>
+i<boost/thread/thread_time.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/win32/thread_data.hpp
+c000000004C3774C50000000000001727
+t1278702789
+s5927
+i<boost/thread/detail/config.hpp>
+i<boost/intrusive_ptr.hpp>
+i<boost/thread/thread_time.hpp>
+i"thread_primitives.hpp"
+i"thread_heap_alloc.hpp"
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/win32/thread_heap_alloc.hpp
+c000000004BB4B5EF0000000000003513
+t1270134255
+s13587
+i<new>
+i"thread_primitives.hpp"
+i<stdexcept>
+i<boost/assert.hpp>
+i<boost/throw_exception.hpp>
+i<windows.h>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/win32/thread_primitives.hpp
+c000000004C3AC89B00000000000033E7
+t1278920859
+s13287
+i<boost/config.hpp>
+i<boost/throw_exception.hpp>
+i<boost/assert.hpp>
+i<boost/thread/exceptions.hpp>
+i<boost/detail/interlocked.hpp>
+i<algorithm>
+i<windows.h>
+i<kfuncs.h>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/thread/xtime.hpp
+c00000000485907140000000000000954
+t1213794068
+s2388
+i<boost/thread/detail/config.hpp>
+i<boost/cstdint.hpp>
+i<boost/thread/thread_time.hpp>
+i<boost/date_time/posix_time/conversion.hpp>
+i<boost/config/abi_prefix.hpp>
+i<boost/config/abi_suffix.hpp>
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/throw_exception.hpp
 c000000004C2FAC520000000000000AB0
@@ -4974,6 +5954,14 @@ t1278257103
 s2849
 i<boost/type_traits/is_reference.hpp>
 i<boost/detail/workaround.hpp>
+i<boost/config.hpp>
+i<boost/type_traits/detail/type_trait_def.hpp>
+i<boost/type_traits/detail/type_trait_undef.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/type_traits/add_volatile.hpp
+c000000004346859E00000000000005FE
+t1128695198
+s1534
 i<boost/config.hpp>
 i<boost/type_traits/detail/type_trait_def.hpp>
 i<boost/type_traits/detail/type_trait_undef.hpp>
@@ -5175,6 +6163,14 @@ c000000003FCDE65300000000000002F0
 t1070458451
 s752
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/type_traits/has_nothrow_copy.hpp
+c000000004749B9D700000000000004E2
+t1196014039
+s1250
+i<boost/type_traits/has_trivial_copy.hpp>
+i<boost/type_traits/detail/bool_trait_def.hpp>
+i<boost/type_traits/detail/bool_trait_undef.hpp>
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/type_traits/has_trivial_copy.hpp
 c000000004749B9D70000000000000691
 t1196014039
@@ -5283,6 +6279,18 @@ i<boost/type_traits/detail/ice_and.hpp>
 i<boost/config.hpp>
 i<boost/static_assert.hpp>
 i<boost/type_traits/remove_cv.hpp>
+i<boost/type_traits/detail/bool_trait_def.hpp>
+i<boost/type_traits/detail/bool_trait_undef.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/type_traits/is_base_of.hpp
+c000000004ACF61C20000000000000795
+t1255104962
+s1941
+i<boost/type_traits/is_base_and_derived.hpp>
+i<boost/type_traits/is_same.hpp>
+i<boost/type_traits/is_class.hpp>
+i<boost/type_traits/detail/ice_or.hpp>
+i<boost/type_traits/detail/ice_and.hpp>
 i<boost/type_traits/detail/bool_trait_def.hpp>
 i<boost/type_traits/detail/bool_trait_undef.hpp>
 
@@ -5521,6 +6529,17 @@ i<boost/config.hpp>
 i<boost/type_traits/detail/bool_trait_def.hpp>
 i<boost/type_traits/detail/bool_trait_undef.hpp>
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/type_traits/is_signed.hpp
+c000000004B1CFDEC0000000000001299
+t1260191212
+s4761
+i<boost/type_traits/is_integral.hpp>
+i<boost/type_traits/remove_cv.hpp>
+i<boost/type_traits/is_enum.hpp>
+i<boost/type_traits/detail/ice_or.hpp>
+i<boost/type_traits/detail/bool_trait_def.hpp>
+i<boost/type_traits/detail/bool_trait_undef.hpp>
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/type_traits/is_union.hpp
 c000000004346859E00000000000005C0
 t1128695198
@@ -5528,6 +6547,17 @@ s1472
 i<boost/type_traits/remove_cv.hpp>
 i<boost/type_traits/config.hpp>
 i<boost/type_traits/intrinsics.hpp>
+i<boost/type_traits/detail/bool_trait_def.hpp>
+i<boost/type_traits/detail/bool_trait_undef.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/type_traits/is_unsigned.hpp
+c000000004B1CFDEC00000000000012D9
+t1260191212
+s4825
+i<boost/type_traits/is_integral.hpp>
+i<boost/type_traits/is_enum.hpp>
+i<boost/type_traits/remove_cv.hpp>
+i<boost/type_traits/detail/ice_or.hpp>
 i<boost/type_traits/detail/bool_trait_def.hpp>
 i<boost/type_traits/detail/bool_trait_undef.hpp>
 
@@ -5553,6 +6583,28 @@ i<boost/type_traits/detail/yes_no_type.hpp>
 i<boost/type_traits/detail/false_result.hpp>
 i<boost/type_traits/detail/bool_trait_def.hpp>
 i<boost/type_traits/detail/bool_trait_undef.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/type_traits/make_unsigned.hpp
+c000000004877328F00000000000012C9
+t1215771279
+s4809
+i<boost/mpl/if.hpp>
+i<boost/type_traits/is_integral.hpp>
+i<boost/type_traits/is_signed.hpp>
+i<boost/type_traits/is_unsigned.hpp>
+i<boost/type_traits/is_enum.hpp>
+i<boost/type_traits/is_same.hpp>
+i<boost/type_traits/remove_cv.hpp>
+i<boost/type_traits/is_const.hpp>
+i<boost/type_traits/is_volatile.hpp>
+i<boost/type_traits/add_const.hpp>
+i<boost/type_traits/add_volatile.hpp>
+i<boost/type_traits/detail/ice_or.hpp>
+i<boost/type_traits/detail/ice_and.hpp>
+i<boost/type_traits/detail/ice_not.hpp>
+i<boost/static_assert.hpp>
+i<boost/type_traits/detail/type_trait_def.hpp>
+i<boost/type_traits/detail/type_trait_undef.hpp>
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/type_traits/msvc/remove_bounds.hpp
 c000000004C35A82E0000000000000617
@@ -5722,6 +6774,12 @@ i<boost/preprocessor/seq/size.hpp>
 i<boost/preprocessor/facilities/empty.hpp>
 i<boost/preprocessor/control/while.hpp>
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/utility/compare_pointees.hpp
+c000000004C3F7B5200000000000008B8
+t1279228754
+s2232
+i<functional>
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/utility/enable_if.hpp
 c0000000048D1C2CB0000000000000C95
 t1221706443
@@ -5745,6 +6803,11 @@ i<boost/mpl/or.hpp>
 i<boost/type_traits/is_pointer.hpp>
 i<boost/type_traits/is_member_function_pointer.hpp>
 i<boost/type_traits/remove_cv.hpp>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/version.hpp
+c000000004C62E8D20000000000000487
+t1281550546
+s1159
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/boost/boost/visit_each.hpp
 c0000000041031B0900000000000002EC
@@ -6023,6 +7086,16 @@ i"cinder/ChanTraits.h"
 i"cinder/Color.h"
 i<boost/logic/tribool.hpp>
 
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/include/cinder/Thread.h
+c000000004D41C64F00000000000006FD
+t1296156239
+s1789
+i"cinder/Cinder.h"
+i<boost/thread/mutex.hpp>
+i<boost/thread/recursive_mutex.hpp>
+i<boost/thread/thread.hpp>
+i<boost/thread/condition_variable.hpp>
+
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/include/cinder/Timer.h
 c000000004D41C64F00000000000008E9
 t1296156239
@@ -6037,6 +7110,16 @@ s4831
 i"cinder/Cinder.h"
 i"cinder/Stream.h"
 i<iostream>
+
+N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/include/cinder/Utilities.h
+c000000004D41C64F00000000000014BA
+t1296156239
+s5306
+i<string>
+i<vector>
+i"cinder/Cinder.h"
+i"cinder/Url.h"
+i<boost/lexical_cast.hpp>
 
 N/Users/creativism/Documents/Dropbox/workspace/SDKs/cinder_master/include/cinder/Vector.h
 c000000004D41C64F0000000000006303
@@ -6211,10 +7294,20 @@ c000000004D41D7900000000000001587
 t1296160656
 s5511
 
+N/usr/include/ni/XnHash.h
+c000000004D41D790000000000000824E
+t1296160656
+s33358
+
 N/usr/include/ni/XnLicensing.h
 c000000004D41D7900000000000000C02
 t1296160656
 s3074
+
+N/usr/include/ni/XnLog.h
+c000000004D41D7900000000000004E5C
+t1296160656
+s20060
 
 N/usr/include/ni/XnPrdNode.h
 c000000004D41D7900000000000015247
@@ -6267,11 +7360,11 @@ s859
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies318270127#318270127#0(0"0(0#1#0"8625208736#0"0#
+lSLF07#2@18"Check dependencies320033863#320033864#0(0"0(0#1#0"8626184192#0"0#
 
 CCompileC build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderKinectServerApp.o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s318242339.779237
-e318242342.250538
+s320033864.491204
+e320033867.378220
 r1
 xCompileC
 xbuild/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderKinectServerApp.o
@@ -6280,15 +7373,15 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h:52,
-o                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp:5:
+oIn file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h:36,
+o                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp:6:
 o/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':
 o/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'
-lSLF07#2@104"Compile /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp318242339#318242342#0(433"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h:52,                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp:5:/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'1(22@25"Unused variable 'nRetVal'318242341#361#72#3(7@118"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp318242341#18446744073709551615#0#0(6@96"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp318242333#5#0#5#0#0"0(7@118"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h318242341#18446744073709551615#0#0(6@96"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h318241993#52#0#52#0#0"0(13@59"Unused variable 'nRetVal' in /usr/include/ni/XnCppWrapper.h318242341#18446744073709551615#0#0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#0"0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#19"unused variable '*'0(0#0#96"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp8618932576#2289"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O3 -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -ffast-math -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-generated-files.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-own-target-headers.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-all-target-headers.hmap -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-project-headers.hmap -F/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -iquote../../SDKs/cinder_master/include -iquote../include -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/include -I/usr/include/ni -I/usr/include/ni/Linux-Arm -I/usr/include/ni/Linux-x86 -I/usr/include/ni/MacOSX -I../../SDKs/cinder_master/boost -I/usr/include/nite -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources/i386 -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources -include /var/folders/iQ/iQRRMmSDH-K4FQRO-2U7gE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CinderKinectServer_Prefix-dxayqwgkqgvdrxglyjqskwgyylzo/CinderKinectServer_Prefix.pch -c /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp -o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderKinectServerApp.o0#
+lSLF07#2@104"Compile /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp320033864#320033867#0(423"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h:36,                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp:6:/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'1(22@25"Unused variable 'nRetVal'320033867#351#72#3(7@118"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp320033867#18446744073709551615#0#0(6@96"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp320033861#6#0#6#0#0"0(7@108"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h320033867#18446744073709551615#0#0(6@86"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h320033429#36#0#36#0#0"0(13@59"Unused variable 'nRetVal' in /usr/include/ni/XnCppWrapper.h320033867#18446744073709551615#0#0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#0"0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#19"unused variable '*'0(0#0#96"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp8627283872#2289"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O3 -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -ffast-math -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-generated-files.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-own-target-headers.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-all-target-headers.hmap -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-project-headers.hmap -F/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -iquote../../SDKs/cinder_master/include -iquote../include -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/include -I/usr/include/ni -I/usr/include/ni/Linux-Arm -I/usr/include/ni/Linux-x86 -I/usr/include/ni/MacOSX -I../../SDKs/cinder_master/boost -I/usr/include/nite -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources/i386 -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources -include /var/folders/iQ/iQRRMmSDH-K4FQRO-2U7gE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CinderKinectServer_Prefix-dxayqwgkqgvdrxglyjqskwgyylzo/CinderKinectServer_Prefix.pch -c /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServerApp.cpp -o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderKinectServerApp.o0#
 
 CCompileC build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderOpenNI.o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s318270127.633380
-e318270130.126503
+s320033203.495532
+e320033206.624829
 r1
 xCompileC
 xbuild/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderOpenNI.o
@@ -6301,7 +7394,26 @@ oIn file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinec
 o                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp:43:
 o/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':
 o/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'
-lSLF07#2@102"Compile /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp318270127#318270130#0(432"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h:52,                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp:43:/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'1(22@25"Unused variable 'nRetVal'318270129#360#72#3(7@116"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp318270129#18446744073709551615#0#0(6@94"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp318269938#43#0#43#0#0"0(7@118"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h318270129#18446744073709551615#0#0(6@96"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h318241993#52#0#52#0#0"0(13@59"Unused variable 'nRetVal' in /usr/include/ni/XnCppWrapper.h318270129#18446744073709551615#0#0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#0"0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#19"unused variable '*'0(0#0#94"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp8625050048#2278"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O3 -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -ffast-math -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-generated-files.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-own-target-headers.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-all-target-headers.hmap -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-project-headers.hmap -F/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -iquote../../SDKs/cinder_master/include -iquote../include -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/include -I/usr/include/ni -I/usr/include/ni/Linux-Arm -I/usr/include/ni/Linux-x86 -I/usr/include/ni/MacOSX -I../../SDKs/cinder_master/boost -I/usr/include/nite -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources/i386 -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources -include /var/folders/iQ/iQRRMmSDH-K4FQRO-2U7gE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CinderKinectServer_Prefix-dxayqwgkqgvdrxglyjqskwgyylzo/CinderKinectServer_Prefix.pch -c /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp -o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderOpenNI.o0#
+lSLF07#2@102"Compile /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp320033203#320033206#0(432"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h:52,                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp:43:/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'1(22@25"Unused variable 'nRetVal'320033206#360#72#3(7@116"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp320033206#18446744073709551615#0#0(6@94"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp318270167#43#0#43#0#0"0(7@118"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h320033206#18446744073709551615#0#0(6@96"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../include/CinderOpenNI.h318241993#52#0#52#0#0"0(13@59"Unused variable 'nRetVal' in /usr/include/ni/XnCppWrapper.h320033206#18446744073709551615#0#0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#0"0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#19"unused variable '*'0(0#0#94"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp6013540689741696000#2278"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O3 -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -ffast-math -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-generated-files.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-own-target-headers.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-all-target-headers.hmap -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-project-headers.hmap -F/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -iquote../../SDKs/cinder_master/include -iquote../include -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/include -I/usr/include/ni -I/usr/include/ni/Linux-Arm -I/usr/include/ni/Linux-x86 -I/usr/include/ni/MacOSX -I../../SDKs/cinder_master/boost -I/usr/include/nite -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources/i386 -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources -include /var/folders/iQ/iQRRMmSDH-K4FQRO-2U7gE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CinderKinectServer_Prefix-dxayqwgkqgvdrxglyjqskwgyylzo/CinderKinectServer_Prefix.pch -c /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../src/CinderOpenNI.cpp -o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderOpenNI.o0#
+
+CCompileC build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/OpenNIWrapper.o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s320033604.712464
+e320033609.855955
+r1
+xCompileC
+xbuild/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/OpenNIWrapper.o
+x/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+oIn file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h:36,
+o                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp:12:
+o/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':
+o/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'
+o/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp: In member function 'std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > cinder::OpenNIWrapper::listGestures()':
+o/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp:55: warning: deprecated conversion from string constant to 'XnChar*'
+lSLF07#2@96"Compile /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp320033604#320033609#0(898"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h:36,                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp:12:/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp: In member function 'std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > cinder::OpenNIWrapper::listGestures()':/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp:55: warning: deprecated conversion from string constant to 'XnChar*'2(22@25"Unused variable 'nRetVal'320033609#344#72#3(7@110"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp320033609#18446744073709551615#0#0(6@88"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp320033603#12#0#12#0#0"0(7@108"In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h320033609#18446744073709551615#0#0(6@86"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h320033429#36#0#36#0#0"0(13@59"Unused variable 'nRetVal' in /usr/include/ni/XnCppWrapper.h320033609#18446744073709551615#0#0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#0"0(6@30"/usr/include/ni/XnCppWrapper.h317853456#4612#0#4612#0#19"unused variable '*'0(22@55"Deprecated conversion from string constant to 'XnChar*'320033609#740#158#0(6@88"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp320033603#55#0#55#0#49"deprecated conversion from string constant to '*'0(0#0#88"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp8627390464#2273"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O3 -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -ffast-math -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-generated-files.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-own-target-headers.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-all-target-headers.hmap -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-project-headers.hmap -F/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -iquote../../SDKs/cinder_master/include -iquote../include -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/include -I/usr/include/ni -I/usr/include/ni/Linux-Arm -I/usr/include/ni/Linux-x86 -I/usr/include/ni/MacOSX -I../../SDKs/cinder_master/boost -I/usr/include/nite -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources/i386 -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources -include /var/folders/iQ/iQRRMmSDH-K4FQRO-2U7gE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CinderKinectServer_Prefix-dxayqwgkqgvdrxglyjqskwgyylzo/CinderKinectServer_Prefix.pch -c /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp -o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/OpenNIWrapper.o0#
 
 CCpResource build/Release/CinderKinectServer.app/Contents/Resources/Arial.ttf Arial.ttf
 s317865748.452787
@@ -6358,14 +7470,14 @@ x../resources/image.jpg
 lSLF07#2@27"Copy ../resources/image.jpg318242196#318242196#0(0"0(0#0#93"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../resources/image.jpg8605013696#482"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/../resources/image.jpg /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/Resources0#
 
 CLd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/MacOS/CinderKinectServer normal i386
-s318270130.126784
-e318270131.334813
+s320033867.378323
+e320033868.168752
 r1
 xLd
 x/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/MacOS/CinderKinectServer
 xnormal
 xi386
-lSLF07#2@146"Link /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/MacOS/CinderKinectServer318270130#318270131#0(0"0(0#0#0"8600354464#1047"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -F/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -filelist /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderKinectServer.LinkFileList -mmacosx-version-min=10.5 -dead_strip ../../SDKs/cinder_master/lib/libcinder.a -framework Cocoa -framework OpenGL -framework Carbon -framework CoreVideo -framework QTKit -framework QuickTime -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -lnimCodecs -lnimMockNodes -lnimRecorder -lOpenNI -o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/MacOS/CinderKinectServer0#
+lSLF07#2@146"Link /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/MacOS/CinderKinectServer320033867#320033868#0(0"0(0#0#0"8626566112#1047"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -F/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -filelist /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/Objects-normal/i386/CinderKinectServer.LinkFileList -mmacosx-version-min=10.5 -dead_strip ../../SDKs/cinder_master/lib/libcinder.a -framework Cocoa -framework OpenGL -framework Carbon -framework CoreVideo -framework QTKit -framework QuickTime -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -lnimCodecs -lnimMockNodes -lnimRecorder -lOpenNI -o /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/MacOS/CinderKinectServer0#
 
 CProcessInfoPlistFile /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app/Contents/Info.plist Info.plist
 s317863604.666130
@@ -6390,10 +7502,10 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@40"Precompile CinderKinectServer_Prefix.pch317863604#317863604#0(0"0(0#0#100"/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServer_Prefix.pch8629917472#2116"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++-header -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O3 -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -ffast-math -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-generated-files.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-own-target-headers.hmap -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-all-target-headers.hmap -iquote /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/CinderKinectServer-project-headers.hmap -F/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release -iquote../../SDKs/cinder_master/include -iquote../include -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/include -I/usr/include/ni -I/usr/include/ni/Linux-Arm -I/usr/include/ni/Linux-x86 -I/usr/include/ni/MacOSX -I../../SDKs/cinder_master/boost -I/usr/include/nite -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources/i386 -I/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/CinderKinectServer.build/Release/CinderKinectServer.build/DerivedSources -c /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/CinderKinectServer_Prefix.pch -o /var/folders/iQ/iQRRMmSDH-K4FQRO-2U7gE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CinderKinectServer_Prefix-dxayqwgkqgvdrxglyjqskwgyylzo/CinderKinectServer_Prefix.pch.gch0#
 
 CTouch /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app
-s318270131.334885
-e318270131.336762
+s320033868.168820
+e320033868.170730
 r1
 xTouch
 x/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app
-lSLF07#2@113"Touch /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app318270131#318270131#0(0"0(0#0#0"8618982688#208"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    /usr/bin/touch -c /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app0#
+lSLF07#2@113"Touch /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app320033868#320033868#0(0"0(0#0#0"8615589152#208"    cd /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode    /usr/bin/touch -c /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/build/Release/CinderKinectServer.app0#
 

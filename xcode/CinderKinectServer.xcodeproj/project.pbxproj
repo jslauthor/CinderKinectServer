@@ -28,6 +28,7 @@
 		87A8FF6A12F243D500BD79B6 /* Sample-Tracking.xml in Resources */ = {isa = PBXBuildFile; fileRef = 87A8FF6712F243D500BD79B6 /* Sample-Tracking.xml */; };
 		87A8FF6B12F243D500BD79B6 /* Sample-User.xml in Resources */ = {isa = PBXBuildFile; fileRef = 87A8FF6812F243D500BD79B6 /* Sample-User.xml */; };
 		87DD404212F3482300B6B103 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87DD404112F3482300B6B103 /* image.jpg */; };
+		87F6A1CD13134A0600F6D262 /* OpenNIWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87F6A1CC13134A0600F6D262 /* OpenNIWrapper.cpp */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,8 @@
 		87A8FF6712F243D500BD79B6 /* Sample-Tracking.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample-Tracking.xml"; sourceTree = "<group>"; };
 		87A8FF6812F243D500BD79B6 /* Sample-User.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample-User.xml"; sourceTree = "<group>"; };
 		87DD404112F3482300B6B103 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image.jpg; path = ../resources/image.jpg; sourceTree = SOURCE_ROOT; };
+		87F6A1C913131B1D00F6D262 /* OpenNIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenNIWrapper.h; sourceTree = "<group>"; };
+		87F6A1CC13134A0600F6D262 /* OpenNIWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenNIWrapper.cpp; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* CinderKinectServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinderKinectServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +96,7 @@
 			children = (
 				87A8FE3612F1F58E00BD79B6 /* CinderKinectServerApp.cpp */,
 				87A8FD9212F1E13600BD79B6 /* CinderOpenNI.cpp */,
+				87F6A1CC13134A0600F6D262 /* OpenNIWrapper.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -150,6 +154,7 @@
 			children = (
 				87A8FD9112F1E12100BD79B6 /* CinderOpenNI.h */,
 				32CA4F630368D1EE00C91783 /* CinderKinectServer_Prefix.pch */,
+				87F6A1C913131B1D00F6D262 /* OpenNIWrapper.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			files = (
 				87A8FD9312F1E13600BD79B6 /* CinderOpenNI.cpp in Sources */,
 				87A8FE3712F1F58E00BD79B6 /* CinderKinectServerApp.cpp in Sources */,
+				87F6A1CD13134A0600F6D262 /* OpenNIWrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
