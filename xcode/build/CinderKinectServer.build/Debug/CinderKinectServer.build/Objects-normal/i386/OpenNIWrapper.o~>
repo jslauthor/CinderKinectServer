@@ -1,0 +1,6 @@
+In file included from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.h:37,
+                 from /Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp:12:
+/usr/include/ni/XnCppWrapper.h: In member function 'XnStatus xn::NodeInfo::GetInstance(xn::ProductionNode&) const':
+/usr/include/ni/XnCppWrapper.h:4612: warning: unused variable 'nRetVal'
+/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp: In member function 'void cinder::OpenNIWrapper::listGestures()':
+/Users/creativism/Documents/Dropbox/workspace/CinderKinectServer/xcode/OpenNIWrapper.cpp:55: warning: deprecated conversion from string constant to 'XnChar*'

@@ -17,17 +17,15 @@
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
-		87A8FD9312F1E13600BD79B6 /* CinderOpenNI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87A8FD9212F1E13600BD79B6 /* CinderOpenNI.cpp */; };
+		877421B313301BEE00493CBF /* UDPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 877421B113301BEE00493CBF /* UDPServer.cpp */; };
 		87A8FE1112F1F2BB00BD79B6 /* libnimCodecs.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A8FE1012F1F2BB00BD79B6 /* libnimCodecs.dylib */; };
 		87A8FE1312F1F2BB00BD79B6 /* libnimMockNodes.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A8FE1212F1F2BB00BD79B6 /* libnimMockNodes.dylib */; };
 		87A8FE1512F1F2BB00BD79B6 /* libnimRecorder.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A8FE1412F1F2BB00BD79B6 /* libnimRecorder.dylib */; };
 		87A8FE1712F1F2BB00BD79B6 /* libOpenNI.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A8FE1612F1F2BB00BD79B6 /* libOpenNI.dylib */; };
 		87A8FE3712F1F58E00BD79B6 /* CinderKinectServerApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87A8FE3612F1F58E00BD79B6 /* CinderKinectServerApp.cpp */; };
-		87A8FF4412F23EFF00BD79B6 /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87A8FF4312F23EFF00BD79B6 /* Arial.ttf */; };
 		87A8FF6912F243D500BD79B6 /* Sample-Scene.xml in Resources */ = {isa = PBXBuildFile; fileRef = 87A8FF6612F243D500BD79B6 /* Sample-Scene.xml */; };
 		87A8FF6A12F243D500BD79B6 /* Sample-Tracking.xml in Resources */ = {isa = PBXBuildFile; fileRef = 87A8FF6712F243D500BD79B6 /* Sample-Tracking.xml */; };
 		87A8FF6B12F243D500BD79B6 /* Sample-User.xml in Resources */ = {isa = PBXBuildFile; fileRef = 87A8FF6812F243D500BD79B6 /* Sample-User.xml */; };
-		87DD404212F3482300B6B103 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87DD404112F3482300B6B103 /* image.jpg */; };
 		87F6A1CD13134A0600F6D262 /* OpenNIWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87F6A1CC13134A0600F6D262 /* OpenNIWrapper.cpp */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -44,22 +42,21 @@
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* CinderKinectServer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderKinectServer_Prefix.pch; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		87A8FD9112F1E12100BD79B6 /* CinderOpenNI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CinderOpenNI.h; path = ../include/CinderOpenNI.h; sourceTree = SOURCE_ROOT; };
-		87A8FD9212F1E13600BD79B6 /* CinderOpenNI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CinderOpenNI.cpp; path = ../src/CinderOpenNI.cpp; sourceTree = SOURCE_ROOT; };
+		877421A9132EBFEB00493CBF /* CinderKinectServer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderKinectServer_Prefix.pch; sourceTree = "<group>"; };
+		877421AA132EC02000493CBF /* CinderKinectServerApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderKinectServerApp.h; sourceTree = "<group>"; };
+		877421B113301BEE00493CBF /* UDPServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UDPServer.cpp; sourceTree = "<group>"; };
+		877421B213301BEE00493CBF /* UDPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPServer.h; sourceTree = "<group>"; };
 		87A8FE1012F1F2BB00BD79B6 /* libnimCodecs.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnimCodecs.dylib; path = usr/local/lib/libnimCodecs.dylib; sourceTree = SDKROOT; };
 		87A8FE1212F1F2BB00BD79B6 /* libnimMockNodes.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnimMockNodes.dylib; path = usr/local/lib/libnimMockNodes.dylib; sourceTree = SDKROOT; };
 		87A8FE1412F1F2BB00BD79B6 /* libnimRecorder.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnimRecorder.dylib; path = usr/local/lib/libnimRecorder.dylib; sourceTree = SDKROOT; };
 		87A8FE1612F1F2BB00BD79B6 /* libOpenNI.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOpenNI.dylib; path = usr/local/lib/libOpenNI.dylib; sourceTree = SDKROOT; };
 		87A8FE3612F1F58E00BD79B6 /* CinderKinectServerApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CinderKinectServerApp.cpp; sourceTree = "<group>"; };
-		87A8FF4312F23EFF00BD79B6 /* Arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arial.ttf; sourceTree = "<group>"; };
 		87A8FF6612F243D500BD79B6 /* Sample-Scene.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample-Scene.xml"; sourceTree = "<group>"; };
 		87A8FF6712F243D500BD79B6 /* Sample-Tracking.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample-Tracking.xml"; sourceTree = "<group>"; };
 		87A8FF6812F243D500BD79B6 /* Sample-User.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample-User.xml"; sourceTree = "<group>"; };
-		87DD404112F3482300B6B103 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image.jpg; path = ../resources/image.jpg; sourceTree = SOURCE_ROOT; };
 		87F6A1C913131B1D00F6D262 /* OpenNIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenNIWrapper.h; sourceTree = "<group>"; };
 		87F6A1CC13134A0600F6D262 /* OpenNIWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenNIWrapper.cpp; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,8 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				87A8FE3612F1F58E00BD79B6 /* CinderKinectServerApp.cpp */,
-				87A8FD9212F1E13600BD79B6 /* CinderOpenNI.cpp */,
 				87F6A1CC13134A0600F6D262 /* OpenNIWrapper.cpp */,
+				877421B113301BEE00493CBF /* UDPServer.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -152,8 +149,9 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				87A8FD9112F1E12100BD79B6 /* CinderOpenNI.h */,
-				32CA4F630368D1EE00C91783 /* CinderKinectServer_Prefix.pch */,
+				877421B213301BEE00493CBF /* UDPServer.h */,
+				877421AA132EC02000493CBF /* CinderKinectServerApp.h */,
+				877421A9132EBFEB00493CBF /* CinderKinectServer_Prefix.pch */,
 				87F6A1C913131B1D00F6D262 /* OpenNIWrapper.h */,
 			);
 			name = Headers;
@@ -162,11 +160,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				87DD404112F3482300B6B103 /* image.jpg */,
 				87A8FF6612F243D500BD79B6 /* Sample-Scene.xml */,
 				87A8FF6712F243D500BD79B6 /* Sample-Tracking.xml */,
 				87A8FF6812F243D500BD79B6 /* Sample-User.xml */,
-				87A8FF4312F23EFF00BD79B6 /* Arial.ttf */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				00CCAF14116A9FEE008396D5 /* CinderApp.icns */,
 			);
@@ -244,11 +240,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */,
-				87A8FF4412F23EFF00BD79B6 /* Arial.ttf in Resources */,
 				87A8FF6912F243D500BD79B6 /* Sample-Scene.xml in Resources */,
 				87A8FF6A12F243D500BD79B6 /* Sample-Tracking.xml in Resources */,
 				87A8FF6B12F243D500BD79B6 /* Sample-User.xml in Resources */,
-				87DD404212F3482300B6B103 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +253,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A8FD9312F1E13600BD79B6 /* CinderOpenNI.cpp in Sources */,
 				87A8FE3712F1F58E00BD79B6 /* CinderKinectServerApp.cpp in Sources */,
 				87F6A1CD13134A0600F6D262 /* OpenNIWrapper.cpp in Sources */,
+				877421B313301BEE00493CBF /* UDPServer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

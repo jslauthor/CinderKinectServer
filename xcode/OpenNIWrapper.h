@@ -11,7 +11,7 @@
 
 // Cinder Includes
 
-#include "Cinder/app/App.h"
+#include "cinder/app/App.h"
 #include "cinder/Cinder.h"
 #include "cinder/Thread.h"
 #include "cinder/Vector.h"
@@ -25,6 +25,7 @@
 #include "cinder/gl/Texture.h"
 #include "cinder/Function.h"
 #include "cinder/Font.h"
+#include "boost/algorithm/string.hpp"
 
 // Standard Includes
 
@@ -48,6 +49,8 @@ using namespace cinder;
 // Constants
 
 #define MAX_DEPTH 10000
+#define MAX_USERS 15
+#define JOINT_CONFIDENCE 0.5
 
 // Class Declarations
 
@@ -90,19 +93,44 @@ namespace cinder
 			float		mX, mY, mZ;
 	};
 
-	/*
 	class UserEvent 
 	{
+		private: 
+			int				mUserID;
+			std::string		mStatus;
+		
 		public:
-			//UserEvent(int userID, std::string status, SkeletalEvent event) : 
+			UserEvent(int userID, std::string status) : mUserID(userID), mStatus(status) {}
+		
+			int				getUserID() const { return mUserID; }
+			std::string		getStatus() const { return mStatus; }
 	};
 	
-	class SkeletalEvent 
+	class Skeleton
 	{
+		public:
+			Skeleton() {}
 		
+			Vec3f head, neck, waist, torso, 
+			leftCollar, leftShoulder, leftElbow, leftWrist, leftHand, leftFingertip,
+			rightCollar, rightShoulder, rightElbow, rightWrist, rightHand, rightFingertip,
+			leftHip, leftKnee, leftAnkle, leftFoot, 
+			rightHip, rightKnee, rightAnkle, rightFoot;
 	};
-	*/
-	 
+	
+	class SkeletonEvent
+	{
+		private: 
+			int				mUserID;
+			Skeleton		mSkeleton;
+			
+		public:
+			SkeletonEvent(int userID, Skeleton &skeleton) : mUserID(userID), mSkeleton(skeleton) {}
+			
+			int				getUserID() const { return mUserID; }
+			Skeleton		getSkeleton() const { return mSkeleton; }
+	};
+	
 	class OpenNIWrapper 
 	{		
 		public:
@@ -142,6 +170,30 @@ namespace cinder
 			CallbackId		registerHandEnded( T *obj, void (T::*callback)(HandEvent) ) { if(!mOpenNIProxy->handsGenerator.IsValid()) mOpenNIProxy->addHandsNode(); return mOpenNIProxy->handEndedCallbacks.registerCb( std::bind1st( std::mem_fun( callback ), obj ) ); }
 			void			unregisterHandEnded( CallbackId id ) { mOpenNIProxy->handEndedCallbacks.unregisterCb( id ); }
 			
+			template<typename T>
+			CallbackId		registerNewUser( T *obj, void (T::*callback)(UserEvent) ) { if(!mOpenNIProxy->userGenerator.IsValid()) mOpenNIProxy->addUserNode(); return mOpenNIProxy->newUserCallbacks.registerCb( std::bind1st( std::mem_fun( callback ), obj ) ); }
+			void			unregisterNewUser( CallbackId id ) { mOpenNIProxy->newUserCallbacks.unregisterCb( id ); }
+		
+			template<typename T>
+			CallbackId		registerUserCalibration( T *obj, void (T::*callback)(UserEvent) ) { if(!mOpenNIProxy->userGenerator.IsValid()) mOpenNIProxy->addUserNode(); return mOpenNIProxy->userCalibrationCallbacks.registerCb( std::bind1st( std::mem_fun( callback ), obj ) ); }
+			void			unregisterUserCalibration( CallbackId id ) { mOpenNIProxy->userCalibrationCallbacks.unregisterCb( id ); }
+		
+			template<typename T>
+			CallbackId		registerUserStartCalibration( T *obj, void (T::*callback)(UserEvent) ) { if(!mOpenNIProxy->userGenerator.IsValid()) mOpenNIProxy->addUserNode(); return mOpenNIProxy->userCalibrationStartCallbacks.registerCb( std::bind1st( std::mem_fun( callback ), obj ) ); }
+			void			unregisterUserStartCalibration( CallbackId id ) { mOpenNIProxy->userCalibrationStartCallbacks.unregisterCb( id ); }
+
+			template<typename T>
+			CallbackId		registerUserPoseDetected( T *obj, void (T::*callback)(UserEvent) ) { if(!mOpenNIProxy->userGenerator.IsValid()) mOpenNIProxy->addUserNode(); return mOpenNIProxy->userPoseCallbacks.registerCb( std::bind1st( std::mem_fun( callback ), obj ) ); }
+			void			unregisterUserPoseDetected( CallbackId id ) { mOpenNIProxy->userPoseCallbacks.unregisterCb( id ); }		
+
+			template<typename T>
+			CallbackId		registerUserLost( T *obj, void (T::*callback)(UserEvent) ) { if(!mOpenNIProxy->userGenerator.IsValid()) mOpenNIProxy->addUserNode(); return mOpenNIProxy->userLostCallbacks.registerCb( std::bind1st( std::mem_fun( callback ), obj ) ); }
+			void			unregisterUserLost( CallbackId id ) { mOpenNIProxy->userLostCallbacks.unregisterCb( id ); }		
+			
+			template<typename T>
+			CallbackId		registerSkeletons( T *obj, void (T::*callback)(SkeletonEvent) ) { return mOpenNIProxy->skeletonCallbacks.registerCb( std::bind1st( std::mem_fun( callback ), obj ) ); }
+			void			unregisterSkeletons( CallbackId id ) { mOpenNIProxy->skeletonCallbacks.unregisterCb( id ); }	
+			
 		protected:
 			static void XN_CALLBACK_TYPE Gesture_Recognized(xn::GestureGenerator& generator, const XnChar* strGesture, const XnPoint3D* pIDPosition, const XnPoint3D* pEndPosition, void* pCookie);
 			static void XN_CALLBACK_TYPE Gesture_Process(xn::GestureGenerator& generator, const XnChar* strGesture, const XnPoint3D* pPosition, XnFloat fProgress, void* pCookie);
@@ -150,6 +202,12 @@ namespace cinder
 			static void XN_CALLBACK_TYPE Hand_Update(xn::HandsGenerator& generator, XnUserID nId, const XnPoint3D* pPosition, XnFloat fTime, void* pCookie);
 			static void XN_CALLBACK_TYPE Hand_Destroy(xn::HandsGenerator& generator, XnUserID nId, XnFloat fTime, void* pCookie);
 			
+			static void XN_CALLBACK_TYPE User_NewUser(xn::UserGenerator& generator, XnUserID nId, void* pCookie);
+			static void XN_CALLBACK_TYPE UserCalibration_CalibrationEnd(xn::SkeletonCapability& capability, XnUserID nId, XnBool bSuccess, void* pCookie);
+			static void XN_CALLBACK_TYPE UserCalibration_CalibrationStart(xn::SkeletonCapability& capability, XnUserID nId, void* pCookie);
+			static void XN_CALLBACK_TYPE UserPose_PoseDetected(xn::PoseDetectionCapability& capability, const XnChar* strPose, XnUserID nId, void* pCookie);
+			static void XN_CALLBACK_TYPE User_LostUser(xn::UserGenerator& generator, XnUserID nId, void* pCookie);
+		
 			struct OpenNIProxy 
 			{
 				OpenNIProxy();
@@ -157,6 +215,7 @@ namespace cinder
 				
 				void addHandsNode();
 				void addGestureNode();
+				void addUserNode();
 				
 				void start();
 				
@@ -164,7 +223,15 @@ namespace cinder
 				void checkStatus();
 				void drawDepthGL();
 				
+				void updateSkeletons();
+				void getJoint(XnUserID player, XnSkeletonJoint jointType, Vec3f &jointPosition);
+				
 				Surface8u getDepthSurface();
+				
+				XnBool								mNeedPose;
+				XnChar								mStrPose[20];
+				float								mJointConfidence;
+				uint								mNumUsers;
 				
 				Context								context;
 				XnStatus							status;
@@ -187,6 +254,9 @@ namespace cinder
 				
 				XnCallbackHandle					gesturesCallbackHandle;
 				XnCallbackHandle					handsCallbackHandle;
+				XnCallbackHandle					userCallbackHandle;
+				XnCallbackHandle					poseCallbackHandle;
+				XnCallbackHandle					calibrationCallbackHandle;
 				
 				CallbackMgr<void (GestureEvent)>	gestureRecognizedCallbacks;
 				CallbackMgr<void (GestureEvent)>	gestureProcessedCallbacks;
@@ -194,6 +264,14 @@ namespace cinder
 				CallbackMgr<void (HandEvent)> 		handBeganCallbacks;
 				CallbackMgr<void (HandEvent)> 		handMovedCallbacks;
 				CallbackMgr<void (HandEvent)> 		handEndedCallbacks;
+				
+				CallbackMgr<void (UserEvent)> 		newUserCallbacks;
+				CallbackMgr<void (UserEvent)> 		userCalibrationCallbacks;
+				CallbackMgr<void (UserEvent)> 		userCalibrationStartCallbacks;
+				CallbackMgr<void (UserEvent)> 		userPoseCallbacks;
+				CallbackMgr<void (UserEvent)> 		userLostCallbacks;
+				
+				CallbackMgr<void (SkeletonEvent)> 	skeletonCallbacks;
 			};
 			
 			std::shared_ptr<OpenNIProxy>	mOpenNIProxy;
