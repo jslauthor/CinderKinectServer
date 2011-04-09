@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "CinderKinectServerApp.cpp"
-         timestampString = "322079305.175412"
+         timestampString = "323567720.644924"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "145"
-         endingLineNumber = "145"
+         startingLineNumber = "220"
+         endingLineNumber = "220"
          landmarkName = "CinderKinectServerApp::setup()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -65,26 +65,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "CinderKinectServerApp.cpp"
-         timestampString = "322079305.175412"
+         timestampString = "323567720.644924"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "134"
-         endingLineNumber = "134"
+         startingLineNumber = "209"
+         endingLineNumber = "209"
          landmarkName = "CinderKinectServerApp::serverThreadFunc()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "CinderKinectServerApp.cpp"
-         timestampString = "322079305.175412"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "105"
-         endingLineNumber = "105"
-         landmarkName = "CinderKinectServerApp::userSkeletonUpdate( SkeletonEvent event )"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -8,12 +8,40 @@
 
 void CinderKinectServerApp::gestureRecognized( GestureEvent event )
 {
-	//app::console() <<  "Gesture Recognized: " << event.getGesture() << " " << event.getX() << " " << event.getY() << " " << event.getZ() << endl;
-	
-	if (boost::iequals(event.getGesture(), "Wave"))
-	{
-		mOpenNIWrapper->startHandsTracking(Vec3f( event.getX(), event.getY(), event.getZ() ));
-	}
+    int size = 4 + 12;
+    unsigned char *msg = new unsigned char[size];
+    
+    int type;
+    
+    if (boost::iequals(event.getGesture(), "Wave"))
+    {
+        type = WAVE;
+    }
+    else if (boost::iequals(event.getGesture(), "RaiseHand"))
+    {
+        type = RAISE_HAND;
+    }
+    else if (boost::iequals(event.getGesture(), "Click"))
+    {
+        type = CLICK;
+    }
+    else if (boost::iequals(event.getGesture(), "Swipe_Right"))
+    {
+        type = SWIPE_RIGHT;
+    }
+    else if (boost::iequals(event.getGesture(), "Swipe_Left"))
+    {
+        type = SWIPE_LEFT;
+    }
+    else
+    {
+        return;
+    }
+    
+    memcpy(msg, &type, 4);
+    putJoint(Vec3f( event.getX(), event.getY(), event.getZ() ), msg + 4);
+    
+    server->sendMessage(GESTURE_EVENT, GESTURE_RECOGNIZED, msg, size);
 }
 
 void CinderKinectServerApp::gestureProcessed( GestureEvent event )
@@ -39,26 +67,78 @@ void CinderKinectServerApp::handEnded( HandEvent event )
 void CinderKinectServerApp::newUserFound( UserEvent event )
 {
 	app::console() << "New user found: " << event.getUserID() << endl;
+    
+    int userID = event.getUserID();
+	
+    int size = 4;
+    unsigned char *msg = new unsigned char[size];
+    memcpy(msg, &userID, 4);
+    
+    server->sendMessage(USER_EVENT, NEW_USER_FOUND, msg, size);
 }
 
 void CinderKinectServerApp::userLost( UserEvent event )
 {
 	app::console() << "User " << event.getUserID() << " lost" << endl;
+    
+    int userID = event.getUserID();
+	
+    int size = 4;
+    unsigned char *msg = new unsigned char[size];
+    memcpy(msg, &userID, 4);
+    
+    server->sendMessage(USER_EVENT, USER_LOST, msg, size);
 }
 
 void CinderKinectServerApp::userPoseDetected( UserEvent event )
 {
 	app::console() << "User " << event.getUserID() << " posed: " << event.getStatus() << endl;
+    
+    int userID = event.getUserID();
+	
+    int size = 4;
+    unsigned char *msg = new unsigned char[size];
+    memcpy(msg, &userID, 4);
+    
+    server->sendMessage(USER_EVENT, USER_POSE_DETECTED, msg, size);
 }
 
 void CinderKinectServerApp::userCalibrationStart( UserEvent event )
 {
 	app::console() << "User " << event.getUserID() << " calibration started" << endl;
+    
+    int userID = event.getUserID();
+	
+    int size = 4;
+    unsigned char *msg = new unsigned char[size];
+    memcpy(msg, &userID, 4);
+    
+    server->sendMessage(USER_EVENT, USER_CALIBRATION_START, msg, size);
 }
 
 void CinderKinectServerApp::userCalibrationEnd( UserEvent event )
 {
-	app::console() << "User " << event.getUserID() << " calibration ended" << endl;
+    app::console() << "User " << event.getUserID() << " calibration ended" << endl;
+    
+    int type;
+    int userID = event.getUserID();
+	
+    int size = 4;
+    unsigned char *msg = new unsigned char[size];
+    memcpy(msg, &userID, 4);
+    
+    if (boost::iequals(event.getStatus(), "failed"))
+    {
+        app::console() << "Calibration failed" << endl;
+        type = USER_CALIBRATION_FAILED;
+    }
+    else if (boost::iequals(event.getStatus(), "succeeded"))
+    {
+        app::console() << "Calibration succeeded" << endl;
+        type = USER_CALIBRATION_SUCCEEDED;
+    }
+    
+    server->sendMessage(USER_EVENT, type, msg, size);
 }
 
 void CinderKinectServerApp::userSkeletonUpdate( SkeletonEvent event )

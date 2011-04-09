@@ -392,7 +392,7 @@ namespace cinder
 		XnPoint3D point[1];
 		point[0] = joint.position;
 		
-		depthGenerator.ConvertProjectiveToRealWorld(1, point, point);
+		depthGenerator.ConvertRealWorldToProjective(1, point, point);
         float _x, _y, _z;
         _x = point[0].X;
         _y = point[0].Y;
@@ -410,7 +410,17 @@ namespace cinder
 	void XN_CALLBACK_TYPE OpenNIWrapper::Gesture_Recognized(xn::GestureGenerator& generator, const XnChar* strGesture, const XnPoint3D* pIDPosition, const XnPoint3D* pEndPosition, void* pCookie)
 	{
 		OpenNIWrapper::OpenNIProxy *mOpenNIProxy = reinterpret_cast<OpenNIWrapper::OpenNIProxy*>( pCookie );
-		mOpenNIProxy->gestureRecognizedCallbacks.call( GestureEvent( strGesture, pEndPosition->X, pEndPosition->Y, pEndPosition->Z ) ); 
+        
+        XnPoint3D point[1];
+		point[0] = *pEndPosition;
+        
+        mOpenNIProxy->depthGenerator.ConvertRealWorldToProjective(1, point, point);
+        float _x, _y, _z;
+        _x = point[0].X;
+        _y = point[0].Y;
+        _z = point[0].Z;
+        
+		mOpenNIProxy->gestureRecognizedCallbacks.call( GestureEvent( strGesture, _x, _y, _z ) ); 
 	}
 	
 	void XN_CALLBACK_TYPE OpenNIWrapper::Gesture_Process(xn::GestureGenerator& generator, const XnChar* strGesture, const XnPoint3D* pPosition, XnFloat fProgress, void* pCookie)
@@ -477,19 +487,17 @@ namespace cinder
 	void XN_CALLBACK_TYPE OpenNIWrapper::UserCalibration_CalibrationEnd(xn::SkeletonCapability& capability, XnUserID nId, XnBool bSuccess, void* pCookie)
 	{
 		OpenNIWrapper::OpenNIProxy *mOpenNIProxy = reinterpret_cast<OpenNIWrapper::OpenNIProxy*>( pCookie );
-		mOpenNIProxy->userCalibrationCallbacks.call(UserEvent(nId, "calibrationEnd")); 
-		
+				
 		if (bSuccess)
 		{
 			// Calibration succeeded
-			
-			app::console() << "Calibration complete, start tracking user " <<  nId <<endl;
+			mOpenNIProxy->userCalibrationCallbacks.call(UserEvent(nId, "succeeded")); 
 			mOpenNIProxy->userGenerator.GetSkeletonCap().StartTracking(nId);
 		}
 		else
 		{
 			// Calibration failed
-			app::console() << "Calibration failed for user " << nId << endl;
+            mOpenNIProxy->userCalibrationCallbacks.call(UserEvent(nId, "failed")); 
 			if (mOpenNIProxy->mNeedPose){
 				mOpenNIProxy->userGenerator.GetPoseDetectionCap().StartPoseDetection(mOpenNIProxy->mStrPose, nId);
 			}

@@ -149,10 +149,10 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				877421B213301BEE00493CBF /* UDPServer.h */,
 				877421AA132EC02000493CBF /* CinderKinectServerApp.h */,
 				877421A9132EBFEB00493CBF /* CinderKinectServer_Prefix.pch */,
 				87F6A1C913131B1D00F6D262 /* OpenNIWrapper.h */,
+				877421B213301BEE00493CBF /* UDPServer.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";

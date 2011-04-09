@@ -47,12 +47,44 @@ class CinderKinectServerApp : public AppBasic
             SKELETAL_EVENT  = 0, 
             GESTURE_EVENT   = 1, 
             HAND_EVENT      = 2,
-            TUIO_EVENT      = 3
+            USER_EVENT      = 3
+        };
+
+        enum GestureEventType
+        {
+            GESTURE_RECOGNIZED = 0,
+            GESTURE_PROCESSED = 1
         };
     
-        enum SkeletalEvent 
+        enum HandEventType
+        {
+            HAND_BEGAN = 0,
+            HAND_MOVED = 1,
+            HAND_ENDED = 2
+        };
+    
+        enum UserEventType
+        {
+            NEW_USER_FOUND = 0,
+            USER_POSE_DETECTED = 1,
+            USER_CALIBRATION_START = 2,
+            USER_CALIBRATION_SUCCEEDED = 3,
+            USER_CALIBRATION_FAILED = 4,
+            USER_LOST = 5
+        };
+    
+        enum SkeletalEventType
         { 
             USER_SKELETON_UPDATE = 0
+        };
+    
+        enum GESTURE_TYPE
+        {
+            WAVE = 0,
+            RAISE_HAND = 1,
+            SWIPE_LEFT = 2,
+            SWIPE_RIGHT = 3,
+            CLICK = 4,
         };
 };
 

@@ -28,7 +28,6 @@ class UDPServer
         
         void sendMessage(int first, int second, unsigned char *data, int len)
         {
-            printf("sending message\n");
             try
             {
                 unsigned char *message = new unsigned char[MAX_PACKET_SIZE];
@@ -39,6 +38,8 @@ class UDPServer
                 memcpy(message + m_len, data, len);
                 
                 socket_.send_to(boost::asio::buffer(message, m_len + len), udp::endpoint(boost::asio::ip::address::from_string("127.0.0.1"), 3131));
+                
+                delete [] message;
             }
             catch (std::exception& e)
             {
